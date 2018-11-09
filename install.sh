@@ -31,4 +31,14 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 GIT_URL="https://github.com/moesaidi/dotfiles.git"
 GIT_BRANCH="master"
 
+echo "Copying $SCRIPTDIR/VIMRC to ~/.vimrc"
+echo
+ln -sf $SCRIPTDIR/vimrc ~/.vimrc
+echo "Copying $SCRIPTDIR/BASH_PROFILE to ~/.bash_profile"
+echo
+ln -sf $SCRIPTDIR/bash_profile ~/.bash_profile
+echo "Copying $SCRIPTDIR/tmux.conf to ~/.tmux.conf"
+echo
+ln -sf $SCRIPTDIR/tmux.conf ~/.tmux.conf
+
 
