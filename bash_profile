@@ -50,6 +50,7 @@
 #   2. MAKE TERMINAL BETTER
 #   -----------------------------
 
+alias r6ops='ssh -l r6ops'                  # SSH into host as r6ops.
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
