@@ -40,5 +40,13 @@ ln -sf $SCRIPTDIR/bash_profile ~/.bash_profile
 echo "Copying $SCRIPTDIR/tmux.conf to ~/.tmux.conf"
 echo
 ln -sf $SCRIPTDIR/tmux.conf ~/.tmux.conf
-
+echo "Copying $SCRIPTDIR/terminalrc to ~/.config/Terminal/terminalrc"
+if [ -d ~/.config/Terminal/ ]; then
+    ln -sf $SCRIPTDIR/terminalrc ~/.config/Terminal/terminalrc
+else
+    echo "Could not find ~/.config/Terminal ... Creating it"
+    mkdir -p "~/.config/Terminal"
+    echo "Trying to copy again..."
+    ln -sf $SCRIPTDIR/terminalrc ~/.config/Terminal/terminalrc
+fi
 
