@@ -50,6 +50,8 @@
 #   2. MAKE TERMINAL BETTER
 #   -----------------------------
 
+alias bounce='ssh vexer@orbit.milkyway'     # Jump host ORBIT
+alias lssh='ssh -l localadmin '             # SSH into localadmin servers` 
 alias multissh='. ~/.dootssh/starttmux '    # Multi Panel SSH
 alias r6ops='ssh -l r6ops'                  # SSH into host as r6ops.
 alias cp='cp -iv'                           # Preferred 'cp' implementation
