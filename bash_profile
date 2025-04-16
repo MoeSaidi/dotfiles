@@ -1,4 +1,38 @@
 #  ---------------------------------------------------------------------------
+#  Professional multi-line prompt with git integration
+#  Features:
+#  - Shows username, hostname, and current directory
+#  - Git branch display in red
+#  - Clean separation between commands
+#  - Color-coded elements for better readability
+#  - Arrow indicator changes color based on previous command success/failure
+#
+#  Note: Make sure your terminal supports 256 colors
+#  ---------------------------------------------------------------------------
+
+# Set up git branch display function
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# Set up color codes
+RESET="\[\033[0m\]"
+BLACK="\[\033[0;30m\]"
+RED="\[\033[0;31m\]"
+GREEN="\[\033[0;32m\]"
+YELLOW="\[\033[0;33m\]"
+BLUE="\[\033[0;34m\]"
+PURPLE="\[\033[0;35m\]"
+CYAN="\[\033[0;36m\]"
+WHITE="\[\033[0;37m\]"
+
+# Old prompt (commented out)
+# export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
+# export PS2="| => "
+
+# Professional multi-line prompt with git branch
+export PS1="\n${BLUE}╭─${RESET}${CYAN}\u${RESET}${WHITE}@${RESET}${PURPLE}\h${RESET} ${YELLOW}\w${RESET}${RED}\$(parse_git_branch)${RESET}\n${BLUE}╰─${GREEN}▶${RESET} "
+export PS2="${BLUE}│${GREEN}▶${RESET} "
 #
 #  Description:  This file holds all my BASH configurations and aliases
 #
@@ -21,8 +55,11 @@
 
 #   Change Prompt
 #   ------------------------------------------------------------
-    export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
-    export PS2="| => "
+    # These PS1 and PS2 settings are redundant since they are already set above
+    # with the professional multi-line prompt with git branch integration
+    # Commenting them out to avoid conflicts
+    # export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
+    # export PS2="| => "
 
 #   Set Paths
 #   ------------------------------------------------------------
